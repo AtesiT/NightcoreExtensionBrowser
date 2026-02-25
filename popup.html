@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nightcore Remix</title>
+  <style>
+    body {
+      width: 250px;
+      background-color: #202020;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 15px;
+      border-top: 3px solid #FF66B2;
+    }
+    h2 {
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      text-align: center;
+      color: #FF66B2;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .control-group {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+    .value-display {
+      color: #FF66B2;
+      font-weight: bold;
+      font-size: 18px;
+      display: block;
+      margin-top: 5px;
+    }
+    input[type=range] {
+      width: 100%;
+      cursor: pointer;
+      accent-color: #FF66B2;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #FF66B2;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    button:hover {
+      background-color: #D1478F;
+    }
+  </style>
+</head>
+<body>
+  <h2>Nightcore Remix</h2>
+
+  <div class="control-group">
+    <label>
+      NIGHTCORE LEVEL
+      <span id="rateValue" class="value-display">1.0x</span>
+    </label>
+    <input type="range" id="rate" min="0.5" max="2.0" step="0.05" value="1.0">
+  </div>
+
+  <button id="resetBtn">RESET</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
