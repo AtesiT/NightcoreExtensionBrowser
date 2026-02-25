@@ -19,7 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
       chrome.scripting.executeScript({
         target: { tabId: tabs[0].id },
         files: ['content.js']
-      }).catch(() => {});
+      }, () => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: "getNightcore" }, (response) => {
+          if (response && response.value) {
+            rateInput.value = response.value;
+            rateVal.textContent = response.value + "x";
+          }
+        });
+      });
     }
   });
 

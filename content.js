@@ -20,6 +20,11 @@
         if (request.action === "setNightcore") {
             applyNightcore(request.value);
         }
+        if (request.action === "getNightcore") {
+            const video = document.querySelector('video');
+            const currentRate = video ? video.playbackRate : 1.0;
+            sendResponse({ value: currentRate });
+        }
     });
 
     setInterval(() => {
