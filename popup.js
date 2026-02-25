@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chrome.tabs.sendMessage(tabs[0].id, { action: "getNightcore" }, (response) => {
           if (response && response.value) {
             rateInput.value = response.value;
-            rateVal.textContent = response.value + "x";
+            rateVal.textContent = parseFloat(response.value).toFixed(2) + "x";
           }
         });
       });
@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   rateInput.addEventListener('input', (e) => {
-    rateVal.textContent = e.target.value + "x";
+    rateVal.textContent = parseFloat(e.target.value).toFixed(2) + "x";
     updateRate(e.target.value);
   });
 
   resetBtn.addEventListener('click', () => {
     rateInput.value = 1.0;
-    rateVal.textContent = "1.0x";
+    rateVal.textContent = "1.00x";
     updateRate(1.0);
   });
 });
